@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-exercises';
+  arr = [];
+  enteredValue = "";
+  disableButton = true;
+
+  onInput(event: Event){
+    this.enteredValue = (<HTMLInputElement>event.target).value;
+    if(this.enteredValue.trim()){
+      this.disableButton = false;
+    }
+    else{
+      this.disableButton = true;
+    }
+  }
+
+  updateArray(){
+    this.arr.push(this.enteredValue);
+    console.log(this.arr);
+  }
 }
