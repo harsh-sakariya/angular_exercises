@@ -4,3 +4,15 @@
     <input type="text" class="form-control" (input)="onInput($event)">
     <button class="btn btn-primary my-2" [disabled]="disableButton" (click)="updateArray()">Submit</button>
 </div>
+
+<div ngDropdown [renderInPlace]="true">
+<button ngDropdownControl class="btn btn-primary mx-2">Open Dropdown!</button>
+    <div ngDropdownContent dropdownClass="slide-fade">
+        <ul>
+        <li><a href="#">Dropdown Item 1</a></li>
+        <li><a href="#">Dropdown Item 2</a></li>
+        <li><a href="#">Dropdown Item 3</a></li>
+        <li><a href="#">Dropdown Item 4</a></li>
+        </ul>
+    </div>
+</div>
