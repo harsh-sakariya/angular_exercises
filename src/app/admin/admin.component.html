@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <app-user (onUserCreated)="storeUserData($event)"></app-user>
+        </div>
+    </div>
+    <br>
+    <p *ngFor="let userData of usersData">
+        <b>First-name:</b> {{userData.firstName}} <b>Family-name:</b> {{userData.familyName}} <b>Country-name:</b> {{userData.countryName}}
+    </p>
+</div>        
+
+
