@@ -8,6 +8,7 @@ import { ChildComponent } from './child/child.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
