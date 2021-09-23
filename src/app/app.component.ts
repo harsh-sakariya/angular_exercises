@@ -6,26 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  arr = [];
-  enteredValue = "";
-  disableButton = true;
-
-  onInput(event: Event){
-    this.enteredValue = (<HTMLInputElement>event.target).value;
-    if(this.enteredValue.trim()){
-      this.disableButton = false;
-    }
-    else{
-      this.disableButton = true;
-    }
-  }
-
-  updateArray(inputField){
-    this.arr.push(this.enteredValue);
-    console.log(this.arr);
-    inputField.value = '';
-    if(!this.disableButton){
-      this.disableButton = true;
-    }
-  }
+  
 }
