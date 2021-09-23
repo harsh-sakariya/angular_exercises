@@ -20,8 +20,12 @@ export class AppComponent {
     }
   }
 
-  updateArray(){
+  updateArray(inputField){
     this.arr.push(this.enteredValue);
     console.log(this.arr);
+    inputField.value = '';
+    if(!this.disableButton){
+      this.disableButton = true;
+    }
   }
 }

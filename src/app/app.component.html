@@ -1,8 +1,8 @@
 <!-- <app-user-example></app-user-example> -->
 
 <div class="container my-2">
-    <input type="text" class="form-control" (input)="onInput($event)">
-    <button class="btn btn-primary my-2" [disabled]="disableButton" (click)="updateArray()">Submit</button>
+    <input type="text" class="form-control" (input)="onInput($event)" #inputField>
+    <button class="btn btn-primary my-2" [disabled]="disableButton" (click)="updateArray(inputField)">Submit</button>
 </div>
 
 <div ngDropdown [renderInPlace]="true">
