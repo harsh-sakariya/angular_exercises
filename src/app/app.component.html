@@ -1,1 +1,14 @@
-<app-admin></app-admin>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <app-user (onUserCreated)="storeUserData($event)"></app-user>
+            <button class="btn btn-danger mx-2" (click)="destroyData()">Destroy Data</button>
+        </div>
+    </div>
+    <br>
+    <p *ngFor="let userData of usersData" >
+        <app-admin [user]="userData">
+            <p #contentPara>-------------------------------------------------------------------------------</p>
+        </app-admin>
+    </p>
+</div>
