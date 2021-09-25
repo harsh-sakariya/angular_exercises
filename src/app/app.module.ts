@@ -7,6 +7,7 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
+import { ModifyDirectiveDirective } from './modify-directive.directive';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AdminComponent } from './admin/admin.component';
     ParentComponent,
     ChildComponent,
     UserComponent,
-    AdminComponent
+    AdminComponent,
+    ModifyDirectiveDirective
   ],
   imports: [
     BrowserModule,
