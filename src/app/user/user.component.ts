@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter, ElementRef, SimpleChanges, OnChanges } from '@angular/core';
 
 
 @Component({
@@ -6,10 +6,10 @@ import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/cor
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnChanges {
   @Output('onUserCreated') enteredUserData = new EventEmitter<{firstName: string, familyName: string, countryName: string}>();
-  @ViewChild('firstName') firstName
-
+  @ViewChild('firstName') firstName: ElementRef
+  
 
   onSubmit(familyName, countryName){
     this.enteredUserData.emit({
@@ -22,6 +22,11 @@ export class UserComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  ngOnChanges(change: SimpleChanges){
+    console.log('ngOnChanges');
+    console.log(change);
   }
 
 }
