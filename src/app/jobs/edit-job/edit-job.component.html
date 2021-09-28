@@ -1,0 +1,17 @@
+<h5>Edit Job</h5>
+<div class="form-group mt-4">
+    <label for="title">Title</label>
+    <input type="text" id="title" class="form-control"  [(ngModel)]="title">
+</div>
+<div class="form-group">
+    <label for="company">Company</label>
+    <input type="text" id="company" class="form-control" [(ngModel)]="company">
+</div>
+<div class="form-group">
+    <label for="place">Place</label>
+    <input type="text" id="place" class="form-control" [(ngModel)]="place">
+</div>
+<div class="form-group">
+    <button class="btn btn-success" (click)="onUpdate()">Submit</button>
+</div>
+
