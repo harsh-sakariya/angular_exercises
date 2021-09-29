@@ -23,6 +23,7 @@
     "bootstrap": "^4.6.0",
     "ng-wormhole": "^3.0.2",
     "rxjs": "~6.5.4",
+    "rxjs-compat": "^6.6.7",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

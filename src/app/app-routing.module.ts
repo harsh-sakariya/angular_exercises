@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth-guard.service';
 import { EditJobComponent } from './jobs/edit-job/edit-job.component';
 import { JobDetailsComponent } from './jobs/job-details/job-details.component';
 import { JobsComponent } from './jobs/jobs.component';
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'job', component: JobsComponent, children: [
     {path: 'new', component: PostJobComponent},
     {path: ':id', component: JobDetailsComponent},
-    {path: ':id/edit', component: EditJobComponent}
+    {path: ':id/edit', canActivate: [AuthGuard], component: EditJobComponent}
   ]},
 ];
 

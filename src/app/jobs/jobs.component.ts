@@ -1,17 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-jobs',
   templateUrl: './jobs.component.html',
   styleUrls: ['./jobs.component.css']
 })
-export class JobsComponent implements OnInit {
+export class JobsComponent {
   showJobsList: boolean = true;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   toggleJobList(){
     this.showJobsList = !this.showJobsList;
