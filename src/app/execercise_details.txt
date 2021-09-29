@@ -1,9 +1,0 @@
-1) create components post-job,job-list,job-details,edit-job(same as post-job), jobs, login, header where jobs, login is child comp of app comp and others are a child of jobs comp, heder always be on top for any route 
-- and it shows name if anyone is logged-in (create the service for that) there must be two buttons in the header also named 'login', 'jobs' which navigate between jobs(name , place) and login(username, password) 
-- and one submit button if user click on this button and inputs are not null than render name in the header as mentioned above and navigate to jobs page (on the top must be two-button one to show/hide job-list and 
-second to post-job) has two major part left and right, left side is job-list and right side is dynamic
-- job-list page has a table of job(id,title, company, place, time of job created,edit-button) , when user click on any job of table it will show job-detail in right side but if user click on edit it will show post-job page with
-auto-filled data of job so that user can edit already posted-job and when 
-- job-post page has one post(submit)button and takes input of all data given above in bracket except time and button, time is added when user click on post and job is added to job-list  and shows details of just posted job in right as job-details comp(also maintain one job-serivce to post new job or edit job and maintain array of jobs in service, all the routing must be working on id only)
-- user can post new job if not logged-in, but to edit job any user must be logged (check it via login-service) -> if any non-logged-in user click edit button it shows error for not authorised for edit instead of   edit-job data
-also handle page-not found
