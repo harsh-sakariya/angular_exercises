@@ -12,8 +12,9 @@
     <tbody>
         <tr style="cursor: pointer;"
          *ngFor="let job of jobs"
+         routerLinkActive="bg-secondary"
         >
-            <td (click)="onViewJob(job.id)">{{job.id}}</td>
+            <td [routerLink]="[job.id]">{{job.id}}</td>
             <td (click)="onViewJob(job.id)">{{job.title}}</td>
             <td (click)="onViewJob(job.id)">{{job.company}}</td>
             <td (click)="onViewJob(job.id)">{{job.place}}</td>

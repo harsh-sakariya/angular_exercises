@@ -13,6 +13,7 @@ import { JobDetailsComponent } from './jobs/job-details/job-details.component';
 import { EditJobComponent } from './jobs/edit-job/edit-job.component';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -26,6 +27,7 @@ import { AuthService } from './auth.service';
     JobListComponent,
     JobDetailsComponent,
     EditJobComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
