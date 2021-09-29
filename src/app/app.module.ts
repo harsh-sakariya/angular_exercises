@@ -11,6 +11,9 @@ import { PostJobComponent } from './jobs/post-job/post-job.component';
 import { JobListComponent } from './jobs/job-list/job-list.component';
 import { JobDetailsComponent } from './jobs/job-details/job-details.component';
 import { EditJobComponent } from './jobs/edit-job/edit-job.component';
+import { AuthGuard } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -24,13 +27,14 @@ import { EditJobComponent } from './jobs/edit-job/edit-job.component';
     JobListComponent,
     JobDetailsComponent,
     EditJobComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
