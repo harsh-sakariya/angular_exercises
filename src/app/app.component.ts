@@ -7,7 +7,7 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit, OnDestroy{
-  strArr: string[] = ['str0', 'str1', 'str2', 'str3', 'str4', 'str5', 'str6', 'str7', 'str8'];
+  strArr: string[] = ['str1', 'str2', 'str3', 'str4', 'str5', 'str6', 'str7', 'str8', 'str9'];
 
   private stringObsSubscription: Subscription;
 
