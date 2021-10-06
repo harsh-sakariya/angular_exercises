@@ -1,0 +1,97 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+  <div class="form-group">
+    <label for="">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      ngModel
+      pattern="^[A-Z]\w{1,}.?\s[A-Z]\w{1,}.?"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="company">Company</label>
+    <input
+      type="text"
+      name="company"
+      id="company"
+      class="form-control"
+      ngModel
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="area">Area</label>
+    <select name="area" id="area" class="form-control" ngModel required>
+      <option value="area1">area 1</option>
+      <option value="area2">area 2</option>
+      <option value="area3">area 3</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="mobile">Mobile No</label>
+    <input
+      type="text"
+      id="mobile"
+      name="mobile"
+      class="form-control"
+      placeholder="+xxx-xx-xxx"
+      ngModel
+      pattern="^\+\d{3}-\d{2}-\d{3}"
+      required
+    />
+  </div>
+  <div class="form-check form-check-inline">
+    <div #gender="ngModelGroup" ngModelGroup="gender">
+      <div class="mr-2">Gender:</div>
+      <input
+        type="checkbox"
+        id="male"
+        name="male"
+        class="form-check-input"
+        ngModel
+      />
+      <label class="form-check-label" for="male">Male</label>
+      <input
+        type="checkbox"
+        id="female"
+        name="female"
+        class="form-check-input"
+        ngModel 
+      />
+      <label class="form-check-label" for="female">Female</label>
+    </div>
+  </div>
+  <br />
+  <div class="form-check form-check-inline">
+    <div class="mr-2">New To Company:</div>
+    <input
+      type="radio"
+      id="isNewToCompanyYes"
+      name="isNewToCompany"
+      class="form-check-input"
+      value="yes"
+      ngModel
+      required
+    />
+    <label class="form-check-label" for="isNewToCompanyYes">Yes</label>
+    <input
+      type="radio"
+      id="isNewToCompanyNo"
+      name="isNewToCompany"
+      class="form-check-input"
+      value="no"
+      ngModel
+      required
+    />
+    <label class="form-check-label" for="isNewToCompanyNo">No</label>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+      Submit
+    </button>
+  </div>
+</form>
+
