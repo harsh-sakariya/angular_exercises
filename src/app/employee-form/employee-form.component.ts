@@ -1,7 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { Employee } from '../shared/employee.model';
 import { EmployeeService } from '../_service/employee.service';
 
 @Component({
@@ -9,11 +8,24 @@ import { EmployeeService } from '../_service/employee.service';
   templateUrl: './employee-form.component.html',
   styleUrls: ['./employee-form.component.css']
 })
-export class EmployeeFormComponent{
+export class EmployeeFormComponent implements OnInit{
+  employeeForm: FormGroup;
 
   constructor(private employeeService: EmployeeService) { }
 
-  @ViewChild('f') form: NgForm;
+  ngOnInit(){
+    this.employeeForm = new FormGroup({
+      'name': new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z]\w+.?\s[A-Z]\w+.?$/)]),
+      'company': new FormControl(null, Validators.required),
+      'area': new FormControl('area1', Validators.required),
+      'mobile': new FormControl(null, [Validators.required, Validators.pattern(/^\+\d{3}-\d{2}-\d{3}/)]),
+      'isNewToCompany': new FormControl('yes'),
+      'gender': new FormGroup({
+        'male': new FormControl(),
+        'female': new FormControl()
+      })
+    })
+  }
   
   getGender(genderObj: {male: boolean, female: boolean}){
     let gender = '';
@@ -36,12 +48,11 @@ export class EmployeeFormComponent{
   }
 
   onSubmit(){
-    const formData = this.form.value;
+    let formData = this.employeeForm.value;
     const gender = this.getGender(formData.gender);
     if(gender){
-      const data: Employee = {...formData, gender: gender};
-      this.employeeService.addEmployee(data);
-      console.log(data);
+      formData = { ...formData, gender: gender};
+      this.employeeService.addEmployee(formData);
     }
   }
 
