@@ -28,4 +28,8 @@ export class EmployeeListComponent implements OnInit {
     )
   }
 
+  onDelete(employee){
+    this.employeeService.deleteEmployee(employee.id);
+  }
+
 }

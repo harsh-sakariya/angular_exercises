@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of employees">
+    <tr *ngFor="let employee of employees" style="cursor: pointer;" (click)="onDelete(employee)">
       <td>{{employee.name}}</td>
       <td>{{employee.company}}</td>
       <td>{{employee.area}}</td>

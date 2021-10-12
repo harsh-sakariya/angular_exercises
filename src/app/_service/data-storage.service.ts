@@ -17,6 +17,9 @@ export class DataStorageService{
     ).pipe(
       tap(
         ()=>{
+          if(data.isNewToCompany !== "yes"){
+            throw new Error("isNewToCompany is false!!!");   
+          }
           this.employee.next(data);
         }
       )
@@ -36,6 +39,16 @@ export class DataStorageService{
         return responseArr;
       })
     );
+  }
+
+  deleteData(key){
+    return this.http.delete(
+      `https://ng-form-http-exercise-default-rtdb.firebaseio.com/employees/${key}.json`,
+      {
+        observe: 'events',
+        responseType: 'text'
+      }
+    )
   }
 
 }

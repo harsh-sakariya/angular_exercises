@@ -13,18 +13,29 @@ export class EmployeeService{
     
   }
 
+  getEmployees(){
+    this.dataStorageService.getData().subscribe(
+      (responseData) => {
+        this.employeeAdded.next(responseData);
+      }
+    )
+  }
+
   addEmployee(employee: Employee){
     this.dataStorageService.addData(employee).subscribe(
       response => {
         console.log(response);
-        this.dataStorageService.getData().subscribe(
-          (responseData) => {
-            this.employeeAdded.next(responseData);
-          }
-        )
+        this.getEmployees();
       }
     )
-    // this.employees.push(employee);
-    // this.employeeAdded.next(this.employees);
+  }
+
+  deleteEmployee(employeeId){
+    this.dataStorageService.deleteData(employeeId).subscribe(
+      (response)=>{
+        console.log(response);
+        this.getEmployees();
+      }
+    )
   }
 }
