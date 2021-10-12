@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataStorageService } from './_service/data-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,7 @@ import { DataStorageService } from './_service/data-storage.service';
 })
 
 export class AppComponent implements OnInit{
-  constructor(private dataStorageService: DataStorageService) {}
+  constructor() {}
 
   ngOnInit(){
     
