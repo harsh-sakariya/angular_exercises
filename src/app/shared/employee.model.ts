@@ -5,6 +5,7 @@ export class Employee {
   gender: string;
   isNewToCompany: string;
   mobile: string;
+  id?: string;
 
   constructor(
     name: string,
