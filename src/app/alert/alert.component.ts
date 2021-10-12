@@ -8,7 +8,6 @@ export class AlertComponent{
   @Output() close = new EventEmitter<void>();
 
   onClose(){
-    console.log("hello");
     this.close.emit();
   }
 }
