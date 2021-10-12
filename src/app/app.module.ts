@@ -5,16 +5,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AlertComponent } from './alert/alert.component';
-import { PlaceholderDirective } from './placeholder/placeholder.directive';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AlertComponent,
-    PlaceholderDirective
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +20,6 @@ import { PlaceholderDirective } from './placeholder/placeholder.directive';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [AlertComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
